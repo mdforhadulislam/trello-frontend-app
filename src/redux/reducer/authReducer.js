@@ -1,15 +1,12 @@
 
 const initialState = {
-    numOfItems: 0,
+    token:""
   };
   
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
-      case "add":
-        return {
-          ...state,
-          numOfItems: state.numOfItems + 1,
-        };
+      case "ADD_TOKEN":
+        return action.payload;
   
       case "delete":
         return {
