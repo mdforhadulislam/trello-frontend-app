@@ -49,7 +49,7 @@ const SingIn = () => {
     });
   };
 
-  if (login || token.token !== "") {
+  if (login || token.token) {
     return <Navigate replace to="/dashboard" />;
   } else {
     return (

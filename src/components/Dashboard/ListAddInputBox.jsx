@@ -1,8 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import ColorButton from "./ColorButton";
 
-const BoardAddInputBox = () => {
+const boardArray = [
+  {
+    name: "Board 1",
+    id: "Board 1",
+    color: "Red",
+  },
+  {
+    name: "Board 2",
+    id: "Board 2",
+    color: "Green",
+  },
+];
+
+const ListAddInputBox = () => {
   return (
     <div
       className=" rounded max-w-[26rem] bg-white m-auto mb-5"
@@ -10,10 +22,28 @@ const BoardAddInputBox = () => {
     >
       <div className="p-3 pb-4 text-center">
         <form>
+          <div className="w-full h-auto">
+            <label
+              for="board_selected_board"
+              class="block mb-2 text-sm font-medium text-gray-900"
+            >
+              Select one board
+            </label>
+            <select
+              name={"board_selected_board"}
+              id={""}
+              className="w-full h-auto mb-3 rounded"
+            >
+              {boardArray.map((s_board) => {
+                return <option value={s_board.name}>{s_board.name}</option>;
+              })}
+            </select>
+          </div>
+
           <input
             type="text"
             className=" w-full border outline-none p-1 text-[18px] rounded"
-            placeholder="Enter Your Board Name"
+            placeholder="Enter Your List Name"
           />
           <div className="flex flex-col justify-center items-center sm:flex-row gap-4 sm:gap-0 sm:justify-between pt-3">
             <div className="items-center flex sm:w-[17rem]">
@@ -29,35 +59,14 @@ const BoardAddInputBox = () => {
                 type="submit"
                 className="w-[8rem] bg-sky-500 text-white p-1 font-medium text-[18px] rounded ml-1"
               >
-                Add Bord
+                Add List
               </button>
             </div>
           </div>
         </form>
       </div>
-      <div className="pt-2">
-        <Link to="/dashboard/boards">
-          <div className="w-full h-auto p-2 flex justify-center items-center gap gap-2">
-            <div className="text-base ">See All Boards</div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-5 h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-              />
-            </svg>
-          </div>
-        </Link>
-      </div>
     </div>
   );
 };
 
-export default BoardAddInputBox;
+export default ListAddInputBox;

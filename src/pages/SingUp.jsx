@@ -52,7 +52,7 @@ const SingUp = () => {
     });
   };
 
-  if (register || token.token !== "") {
+  if (register || token.token) {
     return <Navigate replace to="/auth/singin" />;
   } else {
     return (

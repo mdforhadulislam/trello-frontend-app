@@ -78,7 +78,9 @@ const Navbar = () => {
             </ul>
 
             <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-              {token.token === "" ? (
+              {token.token ? (
+                ""
+              ) : (
                 <>
                   <a
                     href="/auth/singin"
@@ -93,14 +95,14 @@ const Navbar = () => {
                     Sign up
                   </a>
                 </>
-              ) : (
-                ""
               )}
             </div>
           </div>
         </div>
         <div className="hidden space-x-2 md:inline-block">
-          {token.token === "" ? (
+          {token.token ? (
+            ""
+          ) : (
             <>
               <a
                 href="/auth/singin"
@@ -115,8 +117,6 @@ const Navbar = () => {
                 Sign up
               </a>
             </>
-          ) : (
-            ""
           )}
         </div>
       </div>

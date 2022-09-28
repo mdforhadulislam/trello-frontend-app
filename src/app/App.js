@@ -8,6 +8,7 @@ function App({children}) {
   const dispatch = useDispatch()
   useEffect(()=>{
     const token = localStorageToGetTokenUser()
+    console.log(token);
     dispatch({type:"ADD_TOKEN",payload:{token:token}})
   })
     return (
