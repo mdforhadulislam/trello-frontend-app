@@ -9,7 +9,7 @@ function App({children}) {
   useEffect(()=>{
     const token = localStorageToGetTokenUser()
     dispatch({type:"ADD_TOKEN",payload:{token:token}})
-  })
+  },[])
     return (
       <div className="w-full h-auto">
         <Navbar/>

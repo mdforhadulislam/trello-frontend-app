@@ -3,6 +3,25 @@ import { Link } from "react-router-dom";
 import ColorButton from "./ColorButton";
 
 const BoardAddInputBox = () => {
+  const colorClick = (e) => {
+    let allColorButton = e.target.parentNode.children;
+    for (let i = 0; i < allColorButton.length; i++) {
+      const classList = allColorButton[i].classList;
+      for (let i = 0; i < classList.length; i++) {
+        if (classList[i] === "border-2" || classList[i] === "border-black") {
+          classList.remove("border-2");
+          classList.remove("border-black");
+          e.target.classList.add("border-2");
+          e.target.classList.add("border-black");
+        }
+        if (classList[i] !== "border-2" || classList[i] !== "border-black") {
+          e.target.classList.add("border-2");
+          e.target.classList.add("border-black");
+        }
+      }
+    }
+  };
+
   return (
     <div
       className=" rounded max-w-[26rem] bg-white m-auto mb-6"
@@ -17,12 +36,12 @@ const BoardAddInputBox = () => {
           />
           <div className="flex flex-col justify-center items-center sm:flex-row gap-4 sm:gap-0 sm:justify-between pt-3">
             <div className="items-center flex sm:w-[17rem]">
-              <ColorButton color={"bg-red-300"} action={} />
-              <ColorButton color={"bg-orange-200"} action={} />
-              <ColorButton color={"bg-pink-200"} action={} />
-              <ColorButton color={"bg-blue-300"} action={} />
-              <ColorButton color={"bg-rose-200"} action={} />
-              <ColorButton color={"bg-purple-300"} action={} />
+              <ColorButton color={"bg-red-300"} actions={colorClick} />
+              <ColorButton color={"bg-orange-200"} actions={colorClick} />
+              <ColorButton color={"bg-pink-200"} actions={colorClick} />
+              <ColorButton color={"bg-blue-300"} actions={colorClick} />
+              <ColorButton color={"bg-rose-200"} actions={colorClick} />
+              <ColorButton color={"bg-purple-300"} actions={colorClick} />
             </div>
             <div className="right">
               <button

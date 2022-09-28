@@ -1,11 +1,31 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { toast, ToastContainer } from "react-toastify";
+import { postRequestSend } from "../../api/RequestSendMethod";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const token = useSelector((state) => state.auth.token);
+
+  const logout = (e) => {
+    postRequestSend("https://trello-apps.herokuapp.com/api/v1/auth/logout", {
+      authorization: token,
+    }).then((response) => {
+      if (response.status === 200) {
+        toast.success(response.data.message);
+      }
+      if (response.status === 400) {
+        toast.error(response.data.message);
+      }
+      if (response.status === 500) {
+        toast.error(response.data.message);
+      }
+    });
+  };
+
   return (
     <nav className="w-full bg-[#3056d3] shadow">
+      <ToastContainer />
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -78,13 +98,13 @@ const Navbar = () => {
             </ul>
 
             <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-              {token.token ? (
-                <a
-                  href="/auth/singin"
+              {token?.token ? (
+                <button
                   className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+                  onClick={logout}
                 >
                   Logout
-                </a>
+                </button>
               ) : (
                 <>
                   <a
@@ -105,13 +125,13 @@ const Navbar = () => {
           </div>
         </div>
         <div className="hidden space-x-2 md:inline-block">
-          {token.token ? (
-            <a
-              href="/auth/singin"
+          {token?.token ? (
+            <button
               className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+              onClick={logout}
             >
               Logout
-            </a>
+            </button>
           ) : (
             <>
               <a

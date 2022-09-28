@@ -58,15 +58,13 @@ const TaskAddInputBox = () => {
             placeholder="Enter Your Task"
           />
 
-          <div className="flex flex-col justify-center items-center sm:flex-row gap-4 sm:gap-0 sm:justify-between pt-3">
-            <div className="right">
-              <button
-                type="submit"
-                className="w-[8rem] bg-sky-500 text-white p-1 font-medium text-[18px] rounded ml-1"
-              >
-                Add Task
-              </button>
-            </div>
+          <div className="w-full pt-2">
+            <button
+              type="submit"
+              className="w-full bg-sky-500 text-white p-1 font-medium text-[18px] rounded"
+            >
+              Add Task
+            </button>
           </div>
         </form>
       </div>
