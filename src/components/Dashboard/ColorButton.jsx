@@ -1,11 +1,14 @@
 import React from "react";
 
-const ColorButton = ({ color }) => {
+const ColorButton = ({ color, action }) => {
   return (
-    <button
-      className={`w-[2rem] h-[2rem] mr-2 rounded shadow ${color} `}
+    <input
+      value=""
+      name={color}
+      className={`w-[2rem] h-[2rem] mr-2 rounded shadow cursor-pointer ${color}`}
       type="button"
-    ></button>
+      onclick={action}
+    />
   );
 };
 

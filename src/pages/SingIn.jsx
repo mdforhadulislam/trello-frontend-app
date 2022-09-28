@@ -27,7 +27,7 @@ const SingIn = () => {
   const submitHendler = (e) => {
     e.preventDefault();
     postRequestSend(
-      "http://localhost:5000/api/v1/auth/login",
+      "https://trello-apps.herokuapp.com/api/v1/auth/login",
       {},
       fromData
     ).then((response) => {
@@ -49,7 +49,7 @@ const SingIn = () => {
     });
   };
 
-  if (login || token.token) {
+  if (login || token.token !== "") {
     return <Navigate replace to="/dashboard" />;
   } else {
     return (

@@ -3,7 +3,7 @@ const localStorageToGetTokenUser = () => {
   if (getData) {
     return getData;
   } else {
-    return {};
+    return {token:""};
   }
 };
 

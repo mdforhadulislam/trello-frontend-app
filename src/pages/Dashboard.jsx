@@ -1,12 +1,16 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Navigate } from "react-router";
 import BoardAddInputBox from "../components/Dashboard/BoardAddInputBox";
 import ListAddInputBox from "../components/Dashboard/ListAddInputBox";
 import TaskAddInputBox from "../components/Dashboard/TaskAddInputBox";
 
 const Dashboard = () => {
   const token = useSelector((state) => state.auth.token);
-  console.log(token.token);
+
+  if (token.token === "") {
+    return <Navigate replace to="/" />;
+  }
 
   return (
     <>

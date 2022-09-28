@@ -17,25 +17,24 @@ const boardArray = [
 const ListAddInputBox = () => {
   return (
     <div
-      className=" rounded max-w-[26rem] bg-white m-auto mb-5"
+      className=" rounded max-w-[26rem] bg-white m-auto mb-6"
       style={{ boxShadow: "rgb(233 233 233) 0px 0px 10px 5px" }}
     >
       <div className="p-3 pb-4 text-center">
         <form>
           <div className="w-full h-auto">
-            <label
-              for="board_selected_board"
-              class="block mb-2 text-sm font-medium text-gray-900"
-            >
-              Select one board
-            </label>
             <select
-              name={"board_selected_board"}
+              name={"board_selected_box"}
               id={""}
               className="w-full h-auto mb-3 rounded"
             >
+              <option value="">Select one board</option>
               {boardArray.map((s_board) => {
-                return <option value={s_board.name}>{s_board.name}</option>;
+                return (
+                  <option value={s_board.name} key={s_board.id}>
+                    {s_board.name}
+                  </option>
+                );
               })}
             </select>
           </div>

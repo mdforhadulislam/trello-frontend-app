@@ -5,7 +5,7 @@ import ColorButton from "./ColorButton";
 const BoardAddInputBox = () => {
   return (
     <div
-      className=" rounded max-w-[26rem] bg-white m-auto mb-5"
+      className=" rounded max-w-[26rem] bg-white m-auto mb-6"
       style={{ boxShadow: "rgb(233 233 233) 0px 0px 10px 5px" }}
     >
       <div className="p-3 pb-4 text-center">
@@ -17,12 +17,12 @@ const BoardAddInputBox = () => {
           />
           <div className="flex flex-col justify-center items-center sm:flex-row gap-4 sm:gap-0 sm:justify-between pt-3">
             <div className="items-center flex sm:w-[17rem]">
-              <ColorButton color={"bg-red-300"} />
-              <ColorButton color={"bg-orange-200"} />
-              <ColorButton color={"bg-pink-200"} />
-              <ColorButton color={"bg-blue-300"} />
-              <ColorButton color={"bg-rose-200"} />
-              <ColorButton color={"bg-purple-300"} />
+              <ColorButton color={"bg-red-300"} action={} />
+              <ColorButton color={"bg-orange-200"} action={} />
+              <ColorButton color={"bg-pink-200"} action={} />
+              <ColorButton color={"bg-blue-300"} action={} />
+              <ColorButton color={"bg-rose-200"} action={} />
+              <ColorButton color={"bg-purple-300"} action={} />
             </div>
             <div className="right">
               <button

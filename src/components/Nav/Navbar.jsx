@@ -79,7 +79,12 @@ const Navbar = () => {
 
             <div className="mt-3 space-y-2 lg:hidden md:inline-block">
               {token.token ? (
-                ""
+                <a
+                  href="/auth/singin"
+                  className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+                >
+                  Logout
+                </a>
               ) : (
                 <>
                   <a
@@ -101,7 +106,12 @@ const Navbar = () => {
         </div>
         <div className="hidden space-x-2 md:inline-block">
           {token.token ? (
-            ""
+            <a
+              href="/auth/singin"
+              className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+            >
+              Logout
+            </a>
           ) : (
             <>
               <a

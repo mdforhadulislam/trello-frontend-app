@@ -32,7 +32,6 @@ const Contact = () => {
       contactMessage.message !== "" &&
       contactMessage.phone !== ""
     ) {
-      toast.success("Successfuly Send Email");
       emailjs
         .sendForm(
           "service_e5x6sfq",
@@ -43,6 +42,7 @@ const Contact = () => {
         .then(
           (result) => {
             toast.success("successfuly send email");
+            setContactMessage({ name: "", email: "", phone: "", message: "" });
           },
           (error) => {
             toast.success("not send email");

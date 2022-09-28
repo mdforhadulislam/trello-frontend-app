@@ -29,7 +29,7 @@ const SingUp = () => {
   const submitHendler = async (e) => {
     e.preventDefault();
     postRequestSend(
-      "http://localhost:5000/api/v1/auth/register",
+      "https://trello-apps.herokuapp.com/api/v1/auth/register",
       {},
       fromData
     ).then((response) => {
@@ -52,7 +52,7 @@ const SingUp = () => {
     });
   };
 
-  if (register || token.token) {
+  if (register) {
     return <Navigate replace to="/auth/singin" />;
   } else {
     return (
