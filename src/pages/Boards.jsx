@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
+import BoardCard from "../components/Dashboard/BoardCard";
 
 const Boards = () => {
-  return (
-    <div>Boards</div>
-  )
-}
+  const allBoard = useSelector((state) => state.board);
 
-export default Boards
+  return (
+    <div class="w-11/12 m-auto text-center pb-4">
+      {allBoard?.map((board) => (
+        <BoardCard link={`/dashboard/boards/${board._id}`} title={board.name} />
+      ))}
+    </div>
+  );
+};
+
+export default Boards;

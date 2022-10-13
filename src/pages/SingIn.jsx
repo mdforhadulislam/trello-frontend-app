@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router";
 import { toast, ToastContainer } from "react-toastify";
 import { postRequestSend } from "../api/RequestSendMethod";
@@ -14,6 +14,7 @@ const SingIn = () => {
   });
   const [login, setLogin] = useState(false);
   const token = useSelector((state) => state.auth.token);
+  const dispatch = useDispatch();
 
   const inputHendler = (e) => {
     const name = e.target.name;
@@ -26,6 +27,7 @@ const SingIn = () => {
 
   const submitHendler = (e) => {
     e.preventDefault();
+    dispatch({ type: "SPRING_RUN" });
     postRequestSend(
       "https://trello-apps.herokuapp.com/api/v1/auth/login",
       {},
@@ -34,16 +36,13 @@ const SingIn = () => {
       if (response.status === 200) {
         toast.success("Successfuly Login");
         localStorageSetToken({ token: response.data.token });
+        dispatch({ type: "SPRING_STOP" });
         setLogin(true);
         setFromData({
           email: "",
           password: "",
         });
-      }
-      if (response.status === 400) {
-        toast.error(response.data.message);
-      }
-      if (response.status === 500) {
+      } else {
         toast.error(response.data.message);
       }
     });
@@ -54,7 +53,6 @@ const SingIn = () => {
   } else {
     return (
       <div className="container mx-auto p-4 pb-2 bg-white">
-        <ToastContainer />
         <div className="w-full md:w-1/2 lg:w-1/3 mx-auto my-8">
           <h1 className="text-lg font-bold text-center">Sing In</h1>
 

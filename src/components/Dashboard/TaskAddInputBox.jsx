@@ -1,18 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const TaskAddInputBox = () => {
-  const boardArray = [
-    {
-      name: "Board 1",
-      id: "Board 1",
-      color: "Red",
-    },
-    {
-      name: "Board 2",
-      id: "Board 2",
-      color: "Green",
-    },
-  ];
+  const allBoard = useSelector((state) => state.board);
+
   return (
     <div
       className=" rounded max-w-[26rem] bg-white m-auto mb-4"
@@ -26,7 +17,7 @@ const TaskAddInputBox = () => {
               className="w-full h-auto mb-3 rounded"
             >
               <option value="">Select one board</option>
-              {boardArray.map((s_board) => {
+              {allBoard?.map((s_board) => {
                 return (
                   <option value={s_board.name} key={s_board.id}>
                     {s_board.name}
@@ -42,7 +33,7 @@ const TaskAddInputBox = () => {
               className="w-full h-auto mb-3 rounded"
             >
               <option value="">Select one List</option>
-              {boardArray.map((s_board) => {
+              {allBoard?.map((s_board) => {
                 return (
                   <option value={s_board.name} key={s_board.id}>
                     {s_board.name}

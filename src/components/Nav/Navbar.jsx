@@ -1,23 +1,24 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
 import { postRequestSend } from "../../api/RequestSendMethod";
+import localStorageSetToken from "../../hooks/setLocalStore";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const token = useSelector((state) => state.auth.token);
+  const dispatch = useDispatch();
 
   const logout = (e) => {
+    dispatch({ type: "SPRING_RUN" });
     postRequestSend("https://trello-apps.herokuapp.com/api/v1/auth/logout", {
-      authorization: token,
+      authorization: token.token,
     }).then((response) => {
       if (response.status === 200) {
+        localStorageSetToken({ token: "" });
         toast.success(response.data.message);
-      }
-      if (response.status === 400) {
-        toast.error(response.data.message);
-      }
-      if (response.status === 500) {
+        dispatch({ type: "SPRING_STOP" });
+      } else {
         toast.error(response.data.message);
       }
     });

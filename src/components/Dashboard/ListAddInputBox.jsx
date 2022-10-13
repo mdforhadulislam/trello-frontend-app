@@ -1,20 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import ColorButton from "./ColorButton";
 
-const boardArray = [
-  {
-    name: "Board 1",
-    id: "Board 1",
-    color: "Red",
-  },
-  {
-    name: "Board 2",
-    id: "Board 2",
-    color: "Green",
-  },
-];
-
 const ListAddInputBox = () => {
+  const allBoard = useSelector((state) => state.board);
+
   const colorClick = (e) => {
     let allColorButton = e.target.parentNode.children;
     for (let i = 0; i < allColorButton.length; i++) {
@@ -47,13 +37,14 @@ const ListAddInputBox = () => {
               className="w-full h-auto mb-3 rounded"
             >
               <option value="">Select one board</option>
-              {boardArray.map((s_board) => {
-                return (
-                  <option value={s_board.name} key={s_board.id}>
-                    {s_board.name}
-                  </option>
-                );
-              })}
+              {allBoard.length > 0 &&
+                allBoard?.map((s_board) => {
+                  return (
+                    <option value={s_board.name} key={s_board.id}>
+                      {s_board.name}
+                    </option>
+                  );
+                })}
             </select>
           </div>
 
@@ -64,12 +55,12 @@ const ListAddInputBox = () => {
           />
           <div className="flex flex-col justify-center items-center sm:flex-row gap-4 sm:gap-0 sm:justify-between pt-3">
             <div className="items-center flex sm:w-[17rem]">
-              <ColorButton color={"bg-red-300"} actions={colorClick} />
-              <ColorButton color={"bg-orange-200"} actions={colorClick} />
-              <ColorButton color={"bg-pink-200"} actions={colorClick} />
-              <ColorButton color={"bg-blue-300"} actions={colorClick} />
-              <ColorButton color={"bg-rose-200"} actions={colorClick} />
-              <ColorButton color={"bg-purple-300"} actions={colorClick} />
+              <ColorButton color={"#f8b4b4"} actions={colorClick} />
+              <ColorButton color={"#fcd9bd"} actions={colorClick} />
+              <ColorButton color={"#fad1e8"} actions={colorClick} />
+              <ColorButton color={"#a4cafe"} actions={colorClick} />
+              <ColorButton color={"#ffcce3"} actions={colorClick} />
+              <ColorButton color={"#cabffd"} actions={colorClick} />
             </div>
             <div className="right">
               <button

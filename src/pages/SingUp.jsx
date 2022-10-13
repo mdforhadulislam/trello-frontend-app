@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Navigate } from "react-router";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import { postRequestSend } from "../api/RequestSendMethod";
 import Button from "../components/Sing in-up/Button";
 import InputBox from "../components/Sing in-up/InputBox";
@@ -14,8 +14,7 @@ const SingUp = () => {
     password: "",
   });
   const [register, setRegister] = useState(false);
-
-  const token = useSelector((state) => state.auth.token);
+  const dispatch = useDispatch();
 
   const changeHendler = (e) => {
     const name = e.target.name;
@@ -28,11 +27,13 @@ const SingUp = () => {
 
   const submitHendler = async (e) => {
     e.preventDefault();
+    dispatch({ type: "SPRING_RUN" });
     postRequestSend(
       "https://trello-apps.herokuapp.com/api/v1/auth/register",
       {},
       fromData
     ).then((response) => {
+      dispatch({ type: "SPRING_STOP" });
       if (response.status === 200) {
         setFromData({
           name: "",
@@ -57,7 +58,6 @@ const SingUp = () => {
   } else {
     return (
       <div className="container mx-auto p-4 pb-2 bg-white">
-        <ToastContainer />
         <div className="w-full md:w-1/2 lg:w-1/3 mx-auto my-8">
           <h1 className="text-xl font-bold text-center mb-2">Join Us</h1>
 

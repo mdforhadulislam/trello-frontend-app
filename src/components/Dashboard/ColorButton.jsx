@@ -5,8 +5,9 @@ const ColorButton = ({ color, actions }) => {
     <input
       value=""
       name={color}
-      className={`w-[2rem] h-[2rem] mr-2 rounded shadow cursor-pointer ${color}`}
+      className={`w-[2rem] h-[2rem] mr-2 rounded shadow cursor-pointer`}
       type="button"
+      style={{ background: color }}
       onClick={(e) => actions(e)}
     />
   );

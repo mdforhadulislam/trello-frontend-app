@@ -1,6 +1,7 @@
 import emailjs from "@emailjs/browser";
 import React, { useRef, useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const form = useRef();
@@ -10,6 +11,7 @@ const Contact = () => {
     phone: "",
     message: "",
   });
+  const dispatch = useDispatch();
 
   const changeHendler = (e) => {
     const name = e.target.name;
@@ -31,7 +33,8 @@ const Contact = () => {
       contactMessage.email !== "" &&
       contactMessage.message !== "" &&
       contactMessage.phone !== ""
-    ) {
+      ) {
+      dispatch({ type: "SPRING_RUN" });
       emailjs
         .sendForm(
           "service_e5x6sfq",
@@ -39,21 +42,16 @@ const Contact = () => {
           form.current,
           "2m5m5hHUGTZUlIfqT"
         )
-        .then(
-          (result) => {
-            toast.success("successfuly send email");
-            setContactMessage({ name: "", email: "", phone: "", message: "" });
-          },
-          (error) => {
-            toast.success("not send email");
-          }
-        );
+        .then((result) => {
+          toast.success("successfuly send email");
+          setContactMessage({ name: "", email: "", phone: "", message: "" });
+          dispatch({ type: "SPRING_STOP" });
+        });
     }
   };
 
   return (
     <section className="bg-white py-12 lg:py-[50px] overflow-hidden relative z-10">
-      <ToastContainer />
       <div className="container m-auto">
         <div className="flex flex-wrap lg:justify-between -mx-4">
           <div className="w-full lg:w-1/2 xl:w-6/12 px-4">
@@ -301,8 +299,8 @@ const Contact = () => {
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M0 100C0 44.7715 0 0 0 0C55.2285 0 100 44.7715 100 100C100 100 100 100 0 100Z"
                       fill="#3056D3"
                     />

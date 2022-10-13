@@ -1,4 +1,4 @@
-export const getRequestSend= async(url,header)=>{
+export const getRequestSend= async(url:string,header:object)=>{
     const response = await fetch(url,{
        method: 'GET',
         headers:{
