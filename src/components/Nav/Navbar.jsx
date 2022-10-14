@@ -14,10 +14,10 @@ const Navbar = () => {
     postRequestSend("https://trello-apps.herokuapp.com/api/v1/auth/logout", {
       authorization: token.token,
     }).then((response) => {
+      dispatch({ type: "SPRING_STOP" });
       if (response.status === 200) {
         localStorageSetToken({ token: "" });
         toast.success(response.data.message);
-        dispatch({ type: "SPRING_STOP" });
       } else {
         toast.error(response.data.message);
       }
@@ -99,7 +99,7 @@ const Navbar = () => {
             </ul>
 
             <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-              {token?.token ? (
+              {token?.token !== "" ? (
                 <button
                   className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                   onClick={logout}
@@ -126,7 +126,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="hidden space-x-2 md:inline-block">
-          {token?.token ? (
+          {token?.token !== "" ? (
             <button
               className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
               onClick={logout}

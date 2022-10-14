@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import { postRequestSend } from "../api/RequestSendMethod";
 import Button from "../components/Sing in-up/Button";
 import InputBox from "../components/Sing in-up/InputBox";
@@ -33,6 +33,7 @@ const SingIn = () => {
       {},
       fromData
     ).then((response) => {
+      dispatch({ type: "SPRING_STOP" });
       if (response.status === 200) {
         toast.success("Successfuly Login");
         localStorageSetToken({ token: response.data.token });

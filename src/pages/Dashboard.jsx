@@ -16,11 +16,6 @@ const Dashboard = () => {
     <>
       <div className="container pt-3 pb-6 m-auto">
         <div className="p-5">
-          {/* <div className=" pb-3 w-full">
-            <h1 className=" text-4xl text-center title break-words">
-              React Trellor App
-            </h1>
-          </div> */}
           <BoardAddInputBox />
           <ListAddInputBox />
           <TaskAddInputBox />

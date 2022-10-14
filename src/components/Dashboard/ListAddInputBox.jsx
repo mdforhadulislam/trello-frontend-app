@@ -40,7 +40,12 @@ const ListAddInputBox = () => {
               {allBoard.length > 0 &&
                 allBoard?.map((s_board) => {
                   return (
-                    <option value={s_board.name} key={s_board.id}>
+                    <option
+                      value={s_board.name}
+                      key={`${s_board.name}${Math.floor(
+                        Math.random() * 10000
+                      )}`}
+                    >
                       {s_board.name}
                     </option>
                   );

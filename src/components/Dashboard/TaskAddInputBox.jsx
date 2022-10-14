@@ -19,7 +19,10 @@ const TaskAddInputBox = () => {
               <option value="">Select one board</option>
               {allBoard?.map((s_board) => {
                 return (
-                  <option value={s_board.name} key={s_board.id}>
+                  <option
+                    value={s_board.name}
+                    key={`${s_board.name}${Math.floor(Math.random() * 10000)}`}
+                  >
                     {s_board.name}
                   </option>
                 );
@@ -35,7 +38,10 @@ const TaskAddInputBox = () => {
               <option value="">Select one List</option>
               {allBoard?.map((s_board) => {
                 return (
-                  <option value={s_board.name} key={s_board.id}>
+                  <option
+                    value={s_board.name}
+                    key={`${s_board.name}${Math.floor(Math.random() * 10000)}`}
+                  >
                     {s_board.name}
                   </option>
                 );
