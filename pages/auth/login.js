@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import { postRequestSend } from "../../Api/RequestMethod";
+import { LOGIN_URL } from "../../Api/Urls";
 import Layout from "../../Components/Layout";
 import Button from "../../Components/utils/Button";
 import InputBox from "../../Components/utils/InputBox";
 
 const Login = () => {
+
+  const [loginData,setLoginData]= useState({
+    email:"",
+    password:"",
+  })
+
+  const changeHendler =(e)=>{
+    setLoginData({
+     ...loginData,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const submitHendler = (e)=>{
+    e.preventDefault()
+    postRequestSend(LOGIN_URL,{},loginData).then(respons=>{
+      console.log(respons);
+    })
+  }
+
+
   return (
     
     <Layout title={"Login Account"}>
@@ -17,8 +40,8 @@ const Login = () => {
               name={"email"}
               placeholder={"Email"}
               type={"email"}
-              action={() => {}}
-              value={""}
+              action={changeHendler}
+              value={loginData.email}
             />
 
             <InputBox
@@ -26,12 +49,12 @@ const Login = () => {
               name={"password"}
               placeholder={"Password"}
               type={"password"}
-              action={() => {}}
-              value={""}
+              action={changeHendler}
+              value={loginData.password}
               styles={{ fontWeight: "900", letterSpacing: "3px" }}
             />
 
-            <Button title={"Sing In"} action={() => {}} />
+            <Button title={"Sing In"} action={submitHendler} />
 
             <div className="flex flex-col items-center mt-5">
               <p className="mt-1 text-xs font-light text-gray-500">
