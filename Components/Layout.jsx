@@ -1,11 +1,14 @@
 import Head from "next/head";
 import React from "react";
+import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import Footer from "./Footer/Footer";
 import NavBar from "./Nav/NavBar";
 import Spinner from "./utils/Spinner";
 
 const Layout = ({ children, title }) => {
+  const sprinner = useSelector((state) => state.sprinner.sprinner);
+
   return (
     <>
       <Head>
@@ -31,7 +34,7 @@ const Layout = ({ children, title }) => {
         <title>{title ? title : ""} </title>
       </Head>
       <ToastContainer />
-      {false && <Spinner />}
+      {sprinner && <Spinner />}
       <NavBar />
       {children}
       <Footer />

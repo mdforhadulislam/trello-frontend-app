@@ -1,5 +1,7 @@
+import emailjs from "@emailjs/browser";
 import Image from 'next/image';
 import React, { useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import Layout from '../Components/Layout';
 import HalfCircel from "../public/icon/circel-svg.svg";
@@ -8,7 +10,7 @@ import HomeIcon from '../public/icon/home-icon.svg';
 import LongDotIcon from "../public/icon/long-dot-svg.svg";
 import PhoneIcon from '../public/icon/phone-icon.svg';
 import SquireDotIcon from "../public/icon/squir-dot-svg.svg";
-import emailjs from "@emailjs/browser";
+import { run_sprinner, stop_sprinner } from '../Redux/actions/sprinner';
 
 
 const Contact = () => {
@@ -19,6 +21,7 @@ const Contact = () => {
     phone: "",
     message: "",
   });
+  const dispatch = useDispatch()
 
   const changeHendler = (e) => {
     const name = e.target.name;
@@ -41,6 +44,7 @@ const Contact = () => {
       contactMessage.message !== "" &&
       contactMessage.phone !== ""
       ) {
+        dispatch(run_sprinner())
       emailjs
         .sendForm(
           "service_e5x6sfq",
@@ -51,6 +55,7 @@ const Contact = () => {
         .then((result) => {
           toast.success("successfuly send email");
           setContactMessage({ name: "", email: "", phone: "", message: "" });
+          dispatch(stop_sprinner())
         });
     }
   };
