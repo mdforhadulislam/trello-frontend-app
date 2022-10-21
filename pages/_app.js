@@ -1,24 +1,21 @@
-import { createWrapper } from "next-redux-wrapper";
-import React, { useCallback, useState } from "react";
+import { createWrapper } from 'next-redux-wrapper';
+import React, { useEffect, useState } from "react";
 import { Provider, useDispatch } from "react-redux";
 import 'react-toastify/dist/ReactToastify.css';
-import GetLocalStoreData from "../Hooks/GetLocalStoreData";
-import { add_token } from "../Redux/actions/auth";
+import getLocalStoreData from '../Hooks/GetLocalStoreData';
 import store from "../Redux/store";
 import '../styles/globals.css';
 
 const MyApp = ({ Component, pageProps}) => {
-
-  const [tokens,setTokens]=useState(GetLocalStoreData())
+  const [token,setToken] =useState(getLocalStoreData())
   const dispatch = useDispatch()
 
-  useCallback(()=>{
-    setTokens(GetLocalStoreData())
-    dispatch(add_token(tokens))
-  },[tokens])
-
+  useEffect(()=>{
+    dispatch({type:"ADD_AUTH_TOKEN",payload:token})
+  },[dispatch, token])
+  
   return(
-    <Provider store={store}>
+    <Provider store={store} >
       <Component {...pageProps} /> 
     </Provider>
   )

@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
 import auth from "./auth";
-import sprinner from "./sprinner";
+import spinner from "./spinner";
 
-const main = combineReducers({
-  auth,
-  sprinner,
-});
+const reducres = combineReducers({
+    auth,
+    spinner
+})
 
-export default main;
+
+export default reducres

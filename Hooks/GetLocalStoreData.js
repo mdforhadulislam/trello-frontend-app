@@ -1,9 +1,8 @@
-const GetLocalStoreData = () => {
+const getLocalStoreData = () => {
   try {
-    const tokens = localStorage.getItem("auth_token");
-
+    const tokens = JSON.parse(localStorage.getItem("auth_token"));
     if (tokens) {
-      return JSON.parse(tokens);
+      return tokens
     } else {
       return { token: "" };
     }
@@ -12,4 +11,4 @@ const GetLocalStoreData = () => {
   }
 };
 
-export default GetLocalStoreData;
+export default getLocalStoreData;

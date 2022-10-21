@@ -1,5 +1,4 @@
-export const ADD_TOKEN = "ADD_TOKEN"
-export const REMOVE_TOKEN = "REMOVE_TOKEN"
-
-export const SPRINNER_RUN = "SPRINNER_RUN"
-export const SPRINNER_STOP = "SPRINNER_STOP"
+export const ADD_AUTH_TOKEN = "ADD_AUTH_TOKEN" 
+export const REMOVE_AUTH_TOKEN = "REMOVE_AUTH_TOKEN" 
+export const RUN_SPINNER = "RUN_SPINNER" 
+export const STOP_SPINNER = "STOP_SPINNER" 
