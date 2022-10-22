@@ -1,9 +1,9 @@
-const SetLocalStoreData = (key,value) => {
+const setLocalStoreData = (key,value) => {
     try {
-        localStorage.setItem(key,value)
+        localStorage.setItem(key,`{"token":"${value}"}`)
     } catch (error) {
         console.log(error);
     }
 }
 
-export default SetLocalStoreData
+export default setLocalStoreData

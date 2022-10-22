@@ -1,9 +1,54 @@
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { postRequestSend } from "../../Api/RequestMethod";
+import { REGISTER_URL } from "../../Api/Urls";
 import Layout from "../../Components/Layout";
 import Button from "../../Components/utils/Button";
 import InputBox from "../../Components/utils/InputBox";
+import { run_spinner, stop_spinner } from "../../Redux/actions/spinner";
 
-const register = () => {
+const Register = () => {
+  const [registationData,setRegistationData]= useState({
+    username:"",
+    name:"",
+    email:"",
+    password:"",
+  })
+  const dispatch = useDispatch()
+  const router = useRouter()
+
+  const changeHendler =(e)=>{
+    setRegistationData({
+     ...registationData,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const submitHendler = (e)=>{
+    e.preventDefault()
+    dispatch(run_spinner())
+    setTimeout(()=>{
+      if(registationData.name ==="" || registationData.username  ===""|| registationData.email ==="" || registationData.password ===""){
+        dispatch(stop_spinner())
+          toast.error("Enter Your Valid Data")
+      }
+    },1000)
+    if(registationData.name && registationData.username && registationData.email && registationData.password){
+      postRequestSend(REGISTER_URL,{},registationData).then(respons=>{
+        dispatch(stop_spinner())
+        toast.success("Successfuly Register")
+        router.push("/auth/login")
+      }).catch(error=>{
+        dispatch(stop_spinner())
+        toast.error("Failed to Register") 
+      })
+    }
+    
+  }
+
+
   return (
     <Layout title={"Create Account"}>
       <div className="container mx-auto p-4 pb-2 bg-white">
@@ -16,8 +61,8 @@ const register = () => {
               name={"username"}
               placeholder={"Username"}
               type={"text"}
-              action={() => {}}
-              value={""}
+              action={changeHendler}
+              value={registationData.username}
             />
 
             <InputBox
@@ -25,8 +70,8 @@ const register = () => {
               name={"name"}
               placeholder={"Full-name"}
               type={"text"}
-              action={() => {}}
-              value={""}
+              action={changeHendler}
+              value={registationData.name}
             />
 
             <InputBox
@@ -34,8 +79,8 @@ const register = () => {
               name={"email"}
               placeholder={"Email"}
               type={"email"}
-              action={() => {}}
-              value={""}
+              action={changeHendler}
+              value={registationData.email}
             />
 
             <InputBox
@@ -43,12 +88,12 @@ const register = () => {
               name={"password"}
               placeholder={"Password"}
               type={"password"}
-              action={() => {}}
-              value={""}
+              action={changeHendler}
+              value={registationData.password}
               styles={{ fontWeight: "900", letterSpacing: "3px" }}
             />
 
-            <Button title={"Register"} action={() => {}} />
+            <Button title={"Register"} action={submitHendler} />
 
             <div className="flex flex-col items-center mt-5">
               <p className="mt-1 text-xs font-light text-gray-500">
@@ -68,4 +113,4 @@ const register = () => {
   );
 };
 
-export default register;
+export default Register;

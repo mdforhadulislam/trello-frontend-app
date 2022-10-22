@@ -14,11 +14,12 @@ const MyApp = ({ Component, pageProps}) => {
     dispatch({type:"ADD_AUTH_TOKEN",payload:token})
   },[dispatch, token])
   
-  return(
-    <Provider store={store} >
-      <Component {...pageProps} /> 
-    </Provider>
-  )
+    return(
+      <Provider store={store} >
+        <Component {...pageProps} /> 
+      </Provider>
+    )
+  
 }
 
 const makeStore = () => store;
