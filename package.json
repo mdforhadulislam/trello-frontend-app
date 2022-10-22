@@ -6,7 +6,8 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "tc:css": "npx tailwindcss -i ./styles/style.css -o ./styles/globals.css --watch"
     },
     "dependencies": {
         "@emailjs/browser": "^3.7.0",
