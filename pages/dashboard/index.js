@@ -4,7 +4,7 @@ import Layout from '../../Components/Layout'
 const Dashboard = () => {
   return (
     <Layout title={"Dashboard"}>
-    <div>Dashboard</div>
+      
     </Layout>
   )
 }
