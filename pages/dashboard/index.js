@@ -11,7 +11,9 @@ const Dashboard = () => {
   const token = useSelector(state=>state.auth)
 
   if(!token.token){
-      router.push("/auth/login")
+      setTimeout(()=>{
+        router.push("/auth/login")
+      },100)
   }
     return (
       <Layout title={"Dashboard"}>

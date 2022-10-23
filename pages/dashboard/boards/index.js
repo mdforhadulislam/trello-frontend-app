@@ -9,8 +9,10 @@ const Boards = () => {
   const token = useSelector(state=>state.auth)
   const router = useRouter()
 
-    if(!token.token){
-      router.push('/auth/login')
+    if(!token.token){ 
+      setTimeout(()=>{
+      router.push("/auth/login")
+    },100)
     }
 
   return (
