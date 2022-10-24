@@ -49,8 +49,8 @@ const BoardInputBox = ({ closeButton }) => {
     };
 
     return (
-        <div className="w-[20rem] h-auto p-2 bg-white rounded shadow-md inline-block">
-            <div class="w-[20rem] flex bg-slate-200 justify-between  pl-2 pr-2 pt-2 pb-2 rounded mt-2 ">
+        <div className="w-[22rem] h-auto p-2 bg-white rounded shadow-md inline-block">
+            <div class="w-[21rem] flex bg-slate-200 justify-between  pl-2 pr-2 pt-2 pb-2 rounded mt-2 ">
                 <form class="w-full" onSubmit={submitHendler}>
                     <div className="w-full h-auto flex ">
                         <input
@@ -79,7 +79,7 @@ const BoardInputBox = ({ closeButton }) => {
                         </div>
                         <button
                             type="submit"
-                            class="bg-white shadow rounded cursor-pointer p-[4px] py-[5px]">
+                            class="bg-white shadow rounded cursor-pointer p-[8px] py-[5px]">
                             Add List
                         </button>
                     </div>
