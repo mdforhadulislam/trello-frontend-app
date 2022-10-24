@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { postRequestSend } from '../../Api/RequestMethod';
 import { LOGIN_URL } from '../../Api/Urls';
@@ -16,6 +16,7 @@ const Login = () => {
         email: '',
         password: ''
     });
+    const token = useSelector(state=>state.auth)
     const dispatch = useDispatch();
     const router = useRouter()
 
@@ -50,6 +51,10 @@ const Login = () => {
             });
         }
     };
+
+
+    
+  if(token.token) router.push("/dashboard")
 
     return (
         <Layout title={'Login Account'}>

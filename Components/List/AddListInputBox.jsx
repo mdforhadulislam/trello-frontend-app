@@ -2,22 +2,23 @@ import React from 'react';
 
 const AddListInputBox = () => {
     return (
-        <div class="w-[21rem] h-auto p-2 bg-white rounded shadow-md inline-block m-3">
-            <div class="flex bg-slate-200 items-center justify-center align-middle text-white pl-2 pr-4  pt-2 pb-2 rounded cursor-pointer">
-                <h3 class="text-slate-900 text-lg font-medium">Add List</h3>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6 ml-2 text-slate-900 ">
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                </svg>
+        <div className="w-[20rem] h-auto p-2 bg-white rounded shadow-md inline-block">
+            <div class="w-[20rem] flex bg-slate-200 justify-between  pl-2 pr-2 pt-2 pb-2 rounded mt-2 ">
+                <form class="w-full">
+                    <textarea
+                        type="text"
+                        class="w-full border-none outline-none p-1 mb-2 rounded resize-none"></textarea>
+                    <div class="flex justify-between">
+                        <button
+                            type="submit"
+                            class="p-1 bg-white shadow rounded mr-4 cursor-pointer pl-3 pr-3">
+                            Add List
+                        </button>
+                        <button type="button" class="text-xl text-red-600 cursor-pointer">
+                            X
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     );

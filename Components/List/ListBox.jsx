@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AddInputTaskBox from '../Task/AddInputTaskBox';
 import AddTaskBox from '../Task/AddTaskBox';
 import TaskBox from '../Task/TaskBox';
 import ListNameBox from './ListNameBox';
 
 const ListBox = () => {
+    const [listData, setListData] = useState({
+        name:"",
+        color:"",
+        boardId:"",
+    })
+
     return (
         <>
             <div class="w-[21rem] h-auto p-2 bg-white rounded shadow-md inline-block m-3 relative">

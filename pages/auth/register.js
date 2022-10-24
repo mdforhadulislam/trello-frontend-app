@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { postRequestSend } from "../../Api/RequestMethod";
 import { REGISTER_URL } from "../../Api/Urls";
@@ -16,6 +16,7 @@ const Register = () => {
     email:"",
     password:"",
   })
+  const token = useSelector(state=>state.auth)
   const dispatch = useDispatch()
   const router = useRouter()
 
@@ -47,6 +48,8 @@ const Register = () => {
     }
     
   }
+
+  if(token.token) router.push("/dashboard")
 
 
   return (

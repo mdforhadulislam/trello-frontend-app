@@ -2,3 +2,5 @@ export const ADD_AUTH_TOKEN = "ADD_AUTH_TOKEN"
 export const REMOVE_AUTH_TOKEN = "REMOVE_AUTH_TOKEN" 
 export const RUN_SPINNER = "RUN_SPINNER" 
 export const STOP_SPINNER = "STOP_SPINNER" 
+
+export const FETCH_ADD_ALL_BOARD = "FETCH_ADD_ALL_BOARD"

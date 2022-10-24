@@ -1,20 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import ColorButton from '../utils/ColorButton';
 
-const boardArray = [
-    {
-        name: 'Board 1',
-        id: 'Board 1',
-        color: 'Red'
-    },
-    {
-        name: 'Board 2',
-        id: 'Board 2',
-        color: 'Green'
-    }
-];
-
 const ListAddInputBox = () => {
+    const boardList = useSelector((state) => state.board);
+
     const colorClick = (e) => {
         let allColorButton = e.target.parentNode.children;
         for (let i = 0; i < allColorButton.length; i++) {
@@ -46,9 +36,9 @@ const ListAddInputBox = () => {
                             id={''}
                             className="w-full h-auto mb-3 rounded">
                             <option value="">Select one Board</option>
-                            {boardArray.map((s_board) => {
+                            {boardList.map((s_board) => {
                                 return (
-                                    <option key={s_board.name} value={s_board.name}>
+                                    <option key={s_board._id} value={s_board.name}>
                                         {s_board.name}
                                     </option>
                                 );
