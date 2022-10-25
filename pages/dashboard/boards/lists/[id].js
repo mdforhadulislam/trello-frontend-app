@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRequestSend } from '../../../../Api/RequestMethod';
-import { LIST_URL } from '../../../../Api/Urls';
+import { LIST_URL, Task_URL } from '../../../../Api/Urls';
 import Layout from '../../../../Components/Layout';
 import AddListBox from '../../../../Components/List/AddListBox';
 import AddListInputBox from '../../../../Components/List/AddListInputBox';
@@ -27,6 +27,9 @@ const List = () => {
                 }
             }
         );
+        lists.map(list=>{
+            getRequestSend(Task_URL(list._id), { authorization: token.token }).then(response=>{console.log(response)})
+        })
     }, [dispatch, lists, router.query.id, token.token]);
 
     return (

@@ -39,16 +39,18 @@ const ListAddInputBox = () => {
     const submitHendler = (e) => {
         e.preventDefault();
         dispatch(run_spinner());
-        postRequestSend(LIST_URL, { authorization: token.token }, listData).then((response) => {
-            if (response.status === 200) {
-                toast.success('List Add Successfully');
-                dispatch(stop_spinner());
-                setListData({ name: '', color: '', boardId: '' });
-            } else {
-                toast.error('List Add Failed');
-                dispatch(stop_spinner());
+        postRequestSend(LIST_URL(listData.boardId), { authorization: token.token }, listData).then(
+            (response) => {
+                if (response.status === 200) {
+                    toast.success('Successfully Add List');
+                    dispatch(stop_spinner());
+                    setListData({ name: '', color: '', boardId: '' });
+                } else {
+                    toast.error('Failed to add List');
+                    dispatch(stop_spinner());
+                }
             }
-        });
+        );
     };
 
     return (

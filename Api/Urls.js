@@ -16,3 +16,4 @@ export const BOARD_DELETE_URL= (id) => `${API_V_1}boards/${id}`
 export const BOARD_PUT_URL= (id) => `${API_V_1}boards/${id}`
 
 export const LIST_URL=(id) =>`${API_V_1}lists/?bi=${id}`
+export const Task_URL=(id) =>`${API_V_1}tasks/?bi=${id}`
