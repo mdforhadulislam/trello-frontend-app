@@ -3,8 +3,8 @@ import ListOptions from './ListOptions';
 
 const ListNameBox = ({ title }) => {
     return (
-        <div class="flex  justify-between w-[19rem]  align-middle">
-            <h1 class="text-slate-900 text-lg font-medium w-[16rem] break-words">{title}</h1>
+        <div className="flex  justify-between w-[19rem]  align-middle">
+            <h1 className="text-slate-900 text-lg font-medium w-[16rem] break-words">{title}</h1>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRequestSend } from '../../../Api/RequestMethod';
-import { BOARD_URL } from '../../../Api/Urls';
+import { BOARD_URL, LIST_URL } from '../../../Api/Urls';
 import BoardAdd from '../../../Components/Board/BoardAdd';
 import BoardBox from '../../../Components/Board/BoardBox';
 import BoardInputBox from '../../../Components/Board/BoardInputBox';
@@ -23,6 +23,7 @@ const Boards = () => {
                 dispatch(fetch_to_add_board(response.data));
             }
         });
+        
     }, [s_board, dispatch, token.token]);
 
     if (token.token) {

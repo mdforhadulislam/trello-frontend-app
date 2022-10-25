@@ -14,9 +14,11 @@ const BoardEditInputBox = ({ currentValue, closeOption, boardId }) => {
         dispatch(run_spinner());
         putRequestSend(BOARD_PUT_URL(boardId), { authorization: token.token }, { name: name }).then(
             (response) => {
+                setName('');
                 if (response.status === 200) {
                     toast.success('Board successfully updated');
                     dispatch(stop_spinner());
+                    closeOption(false);
                 } else {
                     toast.success('failed to update Board');
                 }
@@ -25,19 +27,19 @@ const BoardEditInputBox = ({ currentValue, closeOption, boardId }) => {
     };
 
     return (
-        <div class=" absolute w-[16.5rem] h-[5rem]  bg-white rounded left-[11px] top-[11px] p-2 z-[80]">
+        <div className=" absolute w-[16.5rem] h-[5rem]  bg-white rounded left-[11px] top-[11px] p-2 z-[80]">
             <input
                 type="text"
-                class="border outline-none w-full p-1 rounded"
+                className="border outline-none w-full p-1 rounded"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
             />
 
-            <div class="flex justify-between mt-1">
-                <button class=" bg-slate-200 shadow pl-3 pr-3 rounded" onClick={saveHendler}>
+            <div className="flex justify-between mt-1">
+                <button className=" bg-slate-200 shadow pl-3 pr-3 rounded" onClick={saveHendler}>
                     Save
                 </button>
-                <button class="text-xl text-red-600 cursor-pointer" onClick={closeOption}>
+                <button className="text-xl text-red-600 cursor-pointer" onClick={closeOption}>
                     X
                 </button>
             </div>

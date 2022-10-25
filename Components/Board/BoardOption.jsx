@@ -26,10 +26,10 @@ const BoardOption = ({ boardId, setIsOption, isOption, setIsEdit, isEdit }) => {
     };
 
     return (
-        <div class="absolute bg-slate-100 w-[11rem] shadow rounded top-[.5rem] left-[6.5rem] z-10">
-            <ul class=" rounded">
+        <div className="absolute bg-slate-100 w-[11rem] shadow rounded top-[.5rem] left-[6.5rem] z-10">
+            <ul className=" rounded">
                 <li
-                    class="hover:bg-teal-500 rounded p-[3px] pl-2 pr-2 hover:text-white cursor-pointer text-lg"
+                    className="hover:bg-teal-500 rounded p-[3px] pl-2 pr-2 hover:text-white cursor-pointer text-lg"
                     onClick={() => {
                         setIsEdit(!isEdit);
                         setIsOption(!isOption);
@@ -37,7 +37,7 @@ const BoardOption = ({ boardId, setIsOption, isOption, setIsEdit, isEdit }) => {
                     Edit Title
                 </li>
                 <li
-                    class="hover:bg-teal-500 rounded p-[3px] pl-2 pr-2 hover:text-white cursor-pointer text-lg"
+                    className="hover:bg-teal-500 rounded p-[3px] pl-2 pr-2 hover:text-white cursor-pointer text-lg"
                     onClick={deleteHendler}>
                     Delete List
                 </li>

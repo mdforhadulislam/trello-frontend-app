@@ -4,3 +4,6 @@ export const RUN_SPINNER = "RUN_SPINNER"
 export const STOP_SPINNER = "STOP_SPINNER" 
 
 export const FETCH_ADD_ALL_BOARD = "FETCH_ADD_ALL_BOARD"
+
+export const FETCH_ADD_ALL_LISTS = "FETCH_ADD_ALL_LISTS"
+
