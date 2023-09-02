@@ -120,4 +120,4 @@ const TaskAddInputBox = () => {
     );
 };
 
-export default TaskAddInputBox;
+export default React.memo(TaskAddInputBox);

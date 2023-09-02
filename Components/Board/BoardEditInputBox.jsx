@@ -47,4 +47,4 @@ const BoardEditInputBox = ({ currentValue, closeOption, boardId }) => {
     );
 };
 
-export default BoardEditInputBox;
+export default React.memo(BoardEditInputBox);

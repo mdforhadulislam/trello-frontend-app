@@ -21,4 +21,4 @@ const ListOptions = () => {
     );
 };
 
-export default ListOptions;
+export default React.memo(ListOptions);

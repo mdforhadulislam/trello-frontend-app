@@ -12,7 +12,13 @@ const BoardBox = ({ boardId, boardName, underListNumber, boardLink, bgColor }) =
 
     return (
         <div className="w-[18rem] h-[6.5rem] inline-block m-2 bg-white p-2 rounded shadow-lg relative">
-            {isEdit && <BoardEditInputBox currentValue={boardName} closeOption={editCloseOption} boardId={boardId} />}
+            {isEdit && (
+                <BoardEditInputBox
+                    currentValue={boardName}
+                    closeOption={editCloseOption}
+                    boardId={boardId}
+                />
+            )}
 
             <div className={`${bgColor}  h-[5.5rem] p-2 rounded flex`}>
                 <a className="w-full text-left" href={boardLink}>
@@ -40,4 +46,4 @@ const BoardBox = ({ boardId, boardName, underListNumber, boardLink, bgColor }) =
     );
 };
 
-export default BoardBox;
+export default React.memo(BoardBox);

@@ -27,4 +27,4 @@ const TaskBox = ({ title }) => {
     );
 };
 
-export default TaskBox;
+export default React.memo(TaskBox);

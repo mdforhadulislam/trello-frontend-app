@@ -24,4 +24,4 @@ const AddInputTaskBox = () => {
     );
 };
 
-export default AddInputTaskBox;
+export default React.memo(AddInputTaskBox);

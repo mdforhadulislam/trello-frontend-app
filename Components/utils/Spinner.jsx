@@ -15,4 +15,4 @@ const Spinner = () => {
     );
 };
 
-export default Spinner;
+export default React.memo(Spinner);

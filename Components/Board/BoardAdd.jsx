@@ -15,4 +15,4 @@ const BoardAdd = ({ onclick }) => {
     );
 };
 
-export default BoardAdd;
+export default React.memo(BoardAdd);

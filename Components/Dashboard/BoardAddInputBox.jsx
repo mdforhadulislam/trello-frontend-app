@@ -106,4 +106,4 @@ const BoardAddInputBox = () => {
     );
 };
 
-export default BoardAddInputBox;
+export default React.memo(BoardAddInputBox);

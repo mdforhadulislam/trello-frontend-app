@@ -14,7 +14,7 @@ const AddListInputBox = () => {
                             className="p-1 bg-white shadow rounded mr-4 cursor-pointer pl-3 pr-3">
                             Add List
                         </button>
-                        <button type="button" className="text-xl text-red-600 cursor-pointer" >
+                        <button type="button" className="text-xl text-red-600 cursor-pointer">
                             X
                         </button>
                     </div>
@@ -24,4 +24,4 @@ const AddListInputBox = () => {
     );
 };
 
-export default AddListInputBox;
+export default React.memo(AddListInputBox);

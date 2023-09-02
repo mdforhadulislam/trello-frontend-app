@@ -1,3 +1,5 @@
+import React from 'react';
+
 const ColorButton = ({ color, action }) => {
     return (
         <button
@@ -7,4 +9,4 @@ const ColorButton = ({ color, action }) => {
     );
 };
 
-export default ColorButton;
+export default React.memo(ColorButton);

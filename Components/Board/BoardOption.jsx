@@ -46,4 +46,4 @@ const BoardOption = ({ boardId, setIsOption, isOption, setIsEdit, isEdit }) => {
     );
 };
 
-export default BoardOption;
+export default React.memo(BoardOption);

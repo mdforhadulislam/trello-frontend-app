@@ -22,4 +22,4 @@ const AddTaskBox = () => {
     );
 };
 
-export default AddTaskBox;
+export default React.memo(AddTaskBox);

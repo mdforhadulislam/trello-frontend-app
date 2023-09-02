@@ -25,4 +25,4 @@ const AddListBox = ({ onClickHendler }) => {
     );
 };
 
-export default AddListBox;
+export default React.memo(AddListBox);

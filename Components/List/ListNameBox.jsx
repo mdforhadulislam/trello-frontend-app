@@ -23,4 +23,4 @@ const ListNameBox = ({ title }) => {
     );
 };
 
-export default ListNameBox;
+export default React.memo(ListNameBox);

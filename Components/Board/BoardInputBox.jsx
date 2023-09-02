@@ -89,4 +89,4 @@ const BoardInputBox = ({ closeButton }) => {
     );
 };
 
-export default BoardInputBox;
+export default React.memo(BoardInputBox);

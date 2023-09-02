@@ -25,4 +25,4 @@ const ListBox = () => {
     );
 };
 
-export default ListBox;
+export default React.memo(ListBox);

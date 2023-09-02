@@ -132,4 +132,4 @@ const ListAddInputBox = () => {
     );
 };
 
-export default ListAddInputBox;
+export default React.memo(ListAddInputBox);
