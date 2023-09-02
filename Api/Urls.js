@@ -1,7 +1,7 @@
-export const rootURL = 'http://localhost:5000/';
-export const API_HEALTH_URL = 'http://localhost:5000/health';
+export const rootURL = 'https://ts-3xqu.onrender.com/';
+export const API_HEALTH_URL = 'https://ts-3xqu.onrender.com/health';
 
-export const API_V_1 = 'http://localhost:5000/api/v1/';
+export const API_V_1 = 'https://ts-3xqu.onrender.com/api/v1/';
 
 export const LOGIN_URL = `${API_V_1}auth/login/`;
 export const LOGOUT_URL = `${API_V_1}auth/logout/`;
