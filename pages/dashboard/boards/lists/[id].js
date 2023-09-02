@@ -22,14 +22,17 @@ const List = () => {
         getRequestSend(LIST_URL(router.query.id), { authorization: token.token }).then(
             (response) => {
                 if (response.status === 200) {
-                    setLists(response.data);
+                    setLists(response.data.data);
                     dispatch(fetch_to_add_list(lists));
                 }
             }
         );
-        lists.map(list=>{
-            getRequestSend(Task_URL(list._id), { authorization: token.token }).then(response=>{console.log(response)})
-        })
+        lists?.map((list) => {
+            console.log(list);
+            getRequestSend(Task_URL(list._id), { authorization: token.token }).then((response) => {
+                console.log(response);
+            });
+        });
     }, [dispatch, lists, router.query.id, token.token]);
 
     return (

@@ -6,10 +6,10 @@ import { toast } from 'react-toastify';
 import { postRequestSend } from '../../Api/RequestMethod';
 import { LOGOUT_URL } from '../../Api/Urls';
 import setLocalStoreData from '../../Hooks/SetLocalStoreData';
-import CloseIcon from '../../public/icon/close-icon.svg';
-import MenuIcon from '../../public/icon/menu-icon.svg';
 import { remove_token } from '../../Redux/actions/auth';
 import { run_spinner, stop_spinner } from '../../Redux/actions/spinner';
+import CloseIcon from '../../public/icon/close-icon.svg';
+import MenuIcon from '../../public/icon/menu-icon.svg';
 import LinkButton from './LinkButton';
 import NavButton from './NavButton';
 
@@ -64,11 +64,8 @@ const NavBar = () => {
                         }`}>
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                             <LinkButton title={'Home'} link={'/'} />
-                            <LinkButton title={'About'} link={'/about'} />
                             <LinkButton title={'Doc'} link={'/doc'} />
                             <LinkButton title={'Contact'} link={'/contact'} />
-                            <LinkButton title={'Dashboard'} link={'/dashboard'} />
-                            <LinkButton title={'Other'} link={'/other'} />
                         </ul>
 
                         <div className="mt-3 space-y-2 lg:hidden md:inline-block">

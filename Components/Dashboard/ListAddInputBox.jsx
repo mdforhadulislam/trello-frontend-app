@@ -69,13 +69,15 @@ const ListAddInputBox = () => {
                             }}
                             className="w-full h-auto mb-3 rounded">
                             <option value="">Select one Board</option>
-                            {boardList.map((s_board) => {
-                                return (
-                                    <option key={s_board._id} value={s_board._id}>
-                                        {s_board.name}
-                                    </option>
-                                );
-                            })}
+                            {boardList.length > 0
+                                ? boardList?.map((s_board) => {
+                                      return (
+                                          <option key={s_board?._id} value={s_board?._id}>
+                                              {s_board?.name}
+                                          </option>
+                                      );
+                                  })
+                                : ''}
                         </select>
                     </div>
 

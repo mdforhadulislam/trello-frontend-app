@@ -16,9 +16,9 @@ const Login = () => {
         email: '',
         password: ''
     });
-    const token = useSelector(state=>state.auth)
+    const token = useSelector((state) => state.auth);
     const dispatch = useDispatch();
-    const router = useRouter()
+    const router = useRouter();
 
     const changeHendler = (e) => {
         setLoginData({
@@ -37,24 +37,24 @@ const Login = () => {
         }
         if (loginData.email && loginData.password) {
             postRequestSend(LOGIN_URL, {}, loginData).then((respons) => {
-            if(respons.status==200){
-                SetLocalStoreData("auth_token",respons?.data?.token)
-              dispatch(add_token({ token: respons?.data?.token ? respons?.data?.token : '' }));
-              toast.success(respons.data.message);
-                dispatch(stop_spinner());
-                router.push('/dashboard');
-            }else{
-              toast.error(respons.data.message);
-              dispatch(stop_spinner());
-
-            }
+                console.log(respons);
+                if (respons.status == 200) {
+                    SetLocalStoreData('auth_token', respons?.data?.token);
+                    dispatch(
+                        add_token({ token: respons?.data?.token ? respons?.data?.token : '' })
+                    );
+                    toast.success(respons.data.message);
+                    dispatch(stop_spinner());
+                    router.push('/dashboard');
+                } else {
+                    toast.error(respons.data.message);
+                    dispatch(stop_spinner());
+                }
             });
         }
     };
 
-
-    
-  if(token.token) router.push("/dashboard")
+    if (token.token) router.push('/dashboard');
 
     return (
         <Layout title={'Login Account'}>
