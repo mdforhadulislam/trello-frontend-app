@@ -7,6 +7,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Jost', sans-serif;
+    /* background-color: rgb(15, 15, 15);
+    color: aliceblue; */
+}
+
+input {
+    /* color: black !important; */
 }
 
 @tailwind base;

@@ -55,7 +55,7 @@ const ListAddInputBox = () => {
 
     return (
         <div
-            className=" rounded max-w-[26rem] bg-white m-auto mb-5"
+            className="w-full h-full  rounded bg-white m-auto mb-5"
             style={{ boxShadow: 'rgb(233 233 233) 0px 0px 10px 5px' }}>
             <div className="p-3 pb-4 text-center">
                 <form onSubmit={submitHendler}>

@@ -7,11 +7,15 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Jost', sans-serif;
+  /* background-color: rgb(15, 15, 15);
+    color: aliceblue; */
 }
 
-/*
-! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
-*/
+input {
+  /* color: black !important; */
+}
+
+/* ! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -1046,16 +1050,20 @@ input:checked + .toggle-bg{
   bottom: -1.75rem;
 }
 
-.left-3{
-  left: 0.75rem;
+.right-3{
+  right: 0.75rem;
 }
 
 .top-3{
   top: 0.75rem;
 }
 
-.right-3{
-  right: 0.75rem;
+.left-\[11px\]{
+  left: 11px;
+}
+
+.top-\[11px\]{
+  top: 11px;
 }
 
 .top-\[\.5rem\]{
@@ -1090,114 +1098,6 @@ input:checked + .toggle-bg{
   bottom: 0px;
 }
 
-.-top-0{
-  top: -0px;
-}
-
-.left-1{
-  left: 0.25rem;
-}
-
-.top-1{
-  top: 0.25rem;
-}
-
-.left-\[3\]{
-  left: 3;
-}
-
-.top-\[3\]{
-  top: 3;
-}
-
-.left-\[3px\]{
-  left: 3px;
-}
-
-.top-\[3px\]{
-  top: 3px;
-}
-
-.left-\[4px\]{
-  left: 4px;
-}
-
-.top-\[4px\]{
-  top: 4px;
-}
-
-.left-\[5px\]{
-  left: 5px;
-}
-
-.top-\[5px\]{
-  top: 5px;
-}
-
-.left-\[6px\]{
-  left: 6px;
-}
-
-.top-\[6px\]{
-  top: 6px;
-}
-
-.left-\[7px\]{
-  left: 7px;
-}
-
-.top-\[7px\]{
-  top: 7px;
-}
-
-.left-\[8px\]{
-  left: 8px;
-}
-
-.top-\[8px\]{
-  top: 8px;
-}
-
-.left-\[px\]{
-  left: px;
-}
-
-.left-\[14px\]{
-  left: 14px;
-}
-
-.left-\[20px\]{
-  left: 20px;
-}
-
-.left-\[30px\]{
-  left: 30px;
-}
-
-.left-\[40px\]{
-  left: 40px;
-}
-
-.left-\[38px\]{
-  left: 38px;
-}
-
-.top-\[9px\]{
-  top: 9px;
-}
-
-.top-\[10px\]{
-  top: 10px;
-}
-
-.top-\[11px\]{
-  top: 11px;
-}
-
-.left-\[11px\]{
-  left: 11px;
-}
-
 .z-10{
   z-index: 10;
 }
@@ -1210,12 +1110,20 @@ input:checked + .toggle-bg{
   z-index: 50;
 }
 
+.z-\[80\]{
+  z-index: 80;
+}
+
 .z-20{
   z-index: 20;
 }
 
 .z-0{
   z-index: 0;
+}
+
+.z-\[100\]{
+  z-index: 100;
 }
 
 .z-40{
@@ -1226,24 +1134,32 @@ input:checked + .toggle-bg{
   z-index: 30;
 }
 
-.z-\[\]{
-  z-index: ;
+.col-span-2{
+  grid-column: span 2 / span 2;
 }
 
-.z-\[100\]{
-  z-index: 100;
+.col-span-4{
+  grid-column: span 4 / span 4;
 }
 
-.z-\[5\]{
-  z-index: 5;
+.col-start-2{
+  grid-column-start: 2;
 }
 
-.z-\[50\]{
-  z-index: 50;
+.row-auto{
+  grid-row: auto;
 }
 
-.z-\[80\]{
-  z-index: 80;
+.row-start-1{
+  grid-row-start: 1;
+}
+
+.row-start-2{
+  grid-row-start: 2;
+}
+
+.row-start-3{
+  grid-row-start: 3;
 }
 
 .m-auto{
@@ -1410,16 +1326,20 @@ input:checked + .toggle-bg{
   height: 4rem;
 }
 
-.h-\[6rem\]{
-  height: 6rem;
+.h-\[6\.5rem\]{
+  height: 6.5rem;
 }
 
-.h-\[5rem\]{
-  height: 5rem;
+.h-\[5\.5rem\]{
+  height: 5.5rem;
 }
 
 .h-\[2rem\]{
   height: 2rem;
+}
+
+.h-\[5rem\]{
+  height: 5rem;
 }
 
 .h-5{
@@ -1438,18 +1358,6 @@ input:checked + .toggle-bg{
   height: 1rem;
 }
 
-.h-\[6\.5rem\]{
-  height: 6.5rem;
-}
-
-.h-\[5\.5rem\]{
-  height: 5.5rem;
-}
-
-.h-\[rem\]{
-  height: rem;
-}
-
 .max-h-\[21rem\]{
   max-height: 21rem;
 }
@@ -1466,12 +1374,12 @@ input:checked + .toggle-bg{
   width: 18rem;
 }
 
-.w-\[13rem\]{
-  width: 13rem;
-}
-
 .w-\[2rem\]{
   width: 2rem;
+}
+
+.w-\[16\.5rem\]{
+  width: 16.5rem;
 }
 
 .w-\[22rem\]{
@@ -1538,22 +1446,6 @@ input:checked + .toggle-bg{
   width: 1rem;
 }
 
-.w-\[1rem\]{
-  width: 1rem;
-}
-
-.w-\[14rem\]{
-  width: 14rem;
-}
-
-.w-\[15rem\]{
-  width: 15rem;
-}
-
-.w-\[16\.5rem\]{
-  width: 16.5rem;
-}
-
 .max-w-\[570px\]{
   max-width: 570px;
 }
@@ -1568,6 +1460,10 @@ input:checked + .toggle-bg{
 
 .max-w-\[26rem\]{
   max-width: 26rem;
+}
+
+.max-w-full{
+  max-width: 100%;
 }
 
 .flex-1{
@@ -1644,6 +1540,158 @@ input:checked + .toggle-bg{
   grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
+.grid-cols-6{
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-rows-3{
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.grid-rows-\[200px_minmax\(900px\2c _1fr\)_100px\]{
+  grid-template-rows: 200px minmax(900px, 1fr) 100px;
+}
+
+.grid-rows-\[200px_minmax\(100px\2c _1fr\)_100px\]{
+  grid-template-rows: 200px minmax(100px, 1fr) 100px;
+}
+
+.grid-rows-\[200px_minmax\(100px\2c _fr\)_100px\]{
+  grid-template-rows: 200px minmax(100px, fr) 100px;
+}
+
+.grid-rows-\[200px_minmax\(100px\2c _\.5fr\)_100px\]{
+  grid-template-rows: 200px minmax(100px, .5fr) 100px;
+}
+
+.grid-rows-\[200px_minmax\(100px\2c _0\.5fr\)_100px\]{
+  grid-template-rows: 200px minmax(100px, 0.5fr) 100px;
+}
+
+.grid-rows-\[200px_minmax\(100px\2c _0\.8fr\)_100px\]{
+  grid-template-rows: 200px minmax(100px, 0.8fr) 100px;
+}
+
+.grid-rows-\[200px_minmax\(100px\2c _\)_100px\]{
+  grid-template-rows: 200px minmax(100px, ) 100px;
+}
+
+.grid-rows-\[200px_minmax\(100px\2c _800\)_100px\]{
+  grid-template-rows: 200px minmax(100px, 800) 100px;
+}
+
+.grid-rows-\[200px_minmax\(100px\2c _800px\)_100px\]{
+  grid-template-rows: 200px minmax(100px, 800px) 100px;
+}
+
+.grid-rows-\[200px_minmax\(100px\2c _00px\)_100px\]{
+  grid-template-rows: 200px minmax(100px, 00px) 100px;
+}
+
+.grid-rows-\[200px_minmax\(100px\2c _400px\)_100px\]{
+  grid-template-rows: 200px minmax(100px, 400px) 100px;
+}
+
+.grid-rows-\[100px_minmax\(0px\2c _1\.1fr\)_0px\]{
+  grid-template-rows: 100px minmax(0px, 1.1fr) 0px;
+}
+
+.grid-rows-\[100px_minmax\(0px\2c _1fr\)_0px\]{
+  grid-template-rows: 100px minmax(0px, 1fr) 0px;
+}
+
+.grid-rows-\[100px_minmax\(0px\2c _fr\)_0px\]{
+  grid-template-rows: 100px minmax(0px, fr) 0px;
+}
+
+.grid-rows-\[100px_minmax\(0px\2c _\.fr\)_0px\]{
+  grid-template-rows: 100px minmax(0px, .fr) 0px;
+}
+
+.grid-rows-\[100px_minmax\(0px\2c _\.7fr\)_0px\]{
+  grid-template-rows: 100px minmax(0px, .7fr) 0px;
+}
+
+.grid-rows-\[100px_minmax\(0px\2c _\.9fr\)_0px\]{
+  grid-template-rows: 100px minmax(0px, .9fr) 0px;
+}
+
+.grid-rows-\[200px_minmax\(0px\2c _\.9fr\)_0px\]{
+  grid-template-rows: 200px minmax(0px, .9fr) 0px;
+}
+
+.grid-rows-\[0px_minmax\(0px\2c _\.9fr\)_0px\]{
+  grid-template-rows: 0px minmax(0px, .9fr) 0px;
+}
+
+.grid-rows-\[300px_minmax\(0px\2c _\.9fr\)_0px\]{
+  grid-template-rows: 300px minmax(0px, .9fr) 0px;
+}
+
+.grid-rows-\[2000px_minmax\(0px\2c _\.9fr\)_0px\]{
+  grid-template-rows: 2000px minmax(0px, .9fr) 0px;
+}
+
+.grid-rows-\[px_minmax\(0px\2c _\.9fr\)_0px\]{
+  grid-template-rows: px minmax(0px, .9fr) 0px;
+}
+
+.grid-rows-\[1px_minmax\(0px\2c _\.9fr\)_0px\]{
+  grid-template-rows: 1px minmax(0px, .9fr) 0px;
+}
+
+.grid-rows-\[190px_minmax\(0px\2c _\.9fr\)_0px\]{
+  grid-template-rows: 190px minmax(0px, .9fr) 0px;
+}
+
+.grid-rows-\[195px_minmax\(0px\2c _\.9fr\)_0px\]{
+  grid-template-rows: 195px minmax(0px, .9fr) 0px;
+}
+
+.grid-rows-\[195px_minmax\(px\2c _\.9fr\)_0px\]{
+  grid-template-rows: 195px minmax(px, .9fr) 0px;
+}
+
+.grid-rows-\[195px_minmax\(1px\2c _\.9fr\)_0px\]{
+  grid-template-rows: 195px minmax(1px, .9fr) 0px;
+}
+
+.grid-rows-\[195px_minmax\(190px\2c _\.9fr\)_0px\]{
+  grid-template-rows: 195px minmax(190px, .9fr) 0px;
+}
+
+.grid-rows-\[195px_minmax\(12px\2c _\.9fr\)_0px\]{
+  grid-template-rows: 195px minmax(12px, .9fr) 0px;
+}
+
+.grid-rows-\[195px_minmax\(1210px\2c _\.9fr\)_0px\]{
+  grid-template-rows: 195px minmax(1210px, .9fr) 0px;
+}
+
+.grid-rows-\[195px_minmax\(210px\2c _\.9fr\)_0px\]{
+  grid-template-rows: 195px minmax(210px, .9fr) 0px;
+}
+
+.grid-rows-\[195px_minmax\(210px\2c _\.9fr\)_px\]{
+  grid-template-rows: 195px minmax(210px, .9fr) px;
+}
+
+.grid-rows-\[195px_minmax\(210px\2c _\.9fr\)_20px\]{
+  grid-template-rows: 195px minmax(210px, .9fr) 20px;
+}
+
+.grid-rows-\[195px_minmax\(210px\2c _\.9fr\)_200px\]{
+  grid-template-rows: 195px minmax(210px, .9fr) 200px;
+}
+
+.grid-rows-\[195px_minmax\(210px\2c _\.9fr\)_300px\]{
+  grid-template-rows: 195px minmax(210px, .9fr) 300px;
+}
+
+.grid-rows-\[195px_minmax\(210px\2c _\.9fr\)_250px\]{
+  grid-template-rows: 195px minmax(210px, .9fr) 250px;
+}
+
 .flex-col{
   flex-direction: column;
 }
@@ -1686,6 +1734,22 @@ input:checked + .toggle-bg{
 
 .gap-2{
   gap: 0.5rem;
+}
+
+.gap-1{
+  gap: 0.25rem;
+}
+
+.gap-0{
+  gap: 0px;
+}
+
+.gap-3{
+  gap: 0.75rem;
+}
+
+.gap-5{
+  gap: 1.25rem;
 }
 
 .space-y-8 > :not([hidden]) ~ :not([hidden]){
@@ -1993,6 +2057,11 @@ input:checked + .toggle-bg{
 .py-2\.5{
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
+}
+
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pb-2{
@@ -2566,6 +2635,14 @@ input:checked + .toggle-bg{
 }
 
 @media (min-width: 768px){
+  .md\:col-span-4{
+    grid-column: span 4 / span 4;
+  }
+
+  .md\:col-start-2{
+    grid-column-start: 2;
+  }
+
   .md\:mr-6{
     margin-right: 1.5rem;
   }
@@ -2644,6 +2721,10 @@ input:checked + .toggle-bg{
 }
 
 @media (min-width: 1024px){
+  .lg\:col-span-2{
+    grid-column: span 2 / span 2;
+  }
+
   .lg\:my-8{
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -2688,12 +2769,148 @@ input:checked + .toggle-bg{
 }
 
 @media (min-width: 1280px){
+  .xl\:col-span-2{
+    grid-column: span 2 / span 2;
+  }
+
+  .xl\:row-start-2{
+    grid-row-start: 2;
+  }
+
   .xl\:w-6\/12{
     width: 50%;
   }
 
   .xl\:w-5\/12{
     width: 41.666667%;
+  }
+
+  .xl\:grid-rows-1{
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+
+  .xl\:grid-rows-3{
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+
+  .xl\:grid-rows-\[200px_minmax\(900px\2c _1fr\)_100px\]{
+    grid-template-rows: 200px minmax(900px, 1fr) 100px;
+  }
+
+  .xl\:grid-rows-\[200px_minmax\(200px\2c _1fr\)_100px\]{
+    grid-template-rows: 200px minmax(200px, 1fr) 100px;
+  }
+
+  .xl\:grid-rows-\[200px_minmax\(200px\2c _1fr\)_200px\]{
+    grid-template-rows: 200px minmax(200px, 1fr) 200px;
+  }
+
+  .xl\:grid-rows-\[200px_minmax\(200px\2c _fr\)_200px\]{
+    grid-template-rows: 200px minmax(200px, fr) 200px;
+  }
+
+  .xl\:grid-rows-\[200px_minmax\(200px\2c _\.5fr\)_200px\]{
+    grid-template-rows: 200px minmax(200px, .5fr) 200px;
+  }
+
+  .xl\:grid-rows-\[200px_minmax\(200px\2c _\.3fr\)_200px\]{
+    grid-template-rows: 200px minmax(200px, .3fr) 200px;
+  }
+
+  .xl\:grid-rows-\[100px_minmax\(200px\2c _\.3fr\)_200px\]{
+    grid-template-rows: 100px minmax(200px, .3fr) 200px;
+  }
+
+  .xl\:grid-rows-\[50px_minmax\(200px\2c _\.3fr\)_200px\]{
+    grid-template-rows: 50px minmax(200px, .3fr) 200px;
+  }
+
+  .xl\:grid-rows-\[50px_minmax\(500px\2c _\.3fr\)_200px\]{
+    grid-template-rows: 50px minmax(500px, .3fr) 200px;
+  }
+
+  .xl\:grid-rows-\[50px_minmax\(50px\2c _\.3fr\)_200px\]{
+    grid-template-rows: 50px minmax(50px, .3fr) 200px;
+  }
+
+  .xl\:grid-rows-\[50px_minmax\(50px\2c _\.3fr\)_500px\]{
+    grid-template-rows: 50px minmax(50px, .3fr) 500px;
+  }
+
+  .xl\:grid-rows-\[50px_minmax\(50px\2c _\.3fr\)_50px\]{
+    grid-template-rows: 50px minmax(50px, .3fr) 50px;
+  }
+
+  .xl\:grid-rows-\[100px_minmax\(50px\2c _\.3fr\)_50px\]{
+    grid-template-rows: 100px minmax(50px, .3fr) 50px;
+  }
+
+  .xl\:grid-rows-\[100px_minmax\(10px\2c _\.3fr\)_50px\]{
+    grid-template-rows: 100px minmax(10px, .3fr) 50px;
+  }
+
+  .xl\:grid-rows-\[100px_minmax\(100px\2c _\.3fr\)_50px\]{
+    grid-template-rows: 100px minmax(100px, .3fr) 50px;
+  }
+
+  .xl\:grid-rows-\[100px_minmax\(100px\2c _\.3fr\)_10px\]{
+    grid-template-rows: 100px minmax(100px, .3fr) 10px;
+  }
+
+  .xl\:grid-rows-\[100px_minmax\(100px\2c _\.3fr\)_100px\]{
+    grid-template-rows: 100px minmax(100px, .3fr) 100px;
+  }
+
+  .xl\:grid-rows-\[120px_minmax\(100px\2c _\.3fr\)_100px\]{
+    grid-template-rows: 120px minmax(100px, .3fr) 100px;
+  }
+
+  .xl\:grid-rows-\[120px_minmax\(120px\2c _\.3fr\)_100px\]{
+    grid-template-rows: 120px minmax(120px, .3fr) 100px;
+  }
+
+  .xl\:grid-rows-\[120px_minmax\(120px\2c _\.3fr\)_120px\]{
+    grid-template-rows: 120px minmax(120px, .3fr) 120px;
+  }
+
+  .xl\:grid-rows-\[120px_minmax\(120px\2c _\.fr\)_120px\]{
+    grid-template-rows: 120px minmax(120px, .fr) 120px;
+  }
+
+  .xl\:grid-rows-\[120px_minmax\(120px\2c _\.6fr\)_120px\]{
+    grid-template-rows: 120px minmax(120px, .6fr) 120px;
+  }
+
+  .xl\:grid-rows-\[120px_minmax\(120px\2c _fr\)_120px\]{
+    grid-template-rows: 120px minmax(120px, fr) 120px;
+  }
+
+  .xl\:grid-rows-\[120px_minmax\(120px\2c _\.9fr\)_120px\]{
+    grid-template-rows: 120px minmax(120px, .9fr) 120px;
+  }
+
+  .xl\:grid-rows-\[120px_minmax\(120px\2c _1\.1fr\)_120px\]{
+    grid-template-rows: 120px minmax(120px, 1.1fr) 120px;
+  }
+
+  .xl\:grid-rows-\[0px_minmax\(120px\2c _1\.1fr\)_120px\]{
+    grid-template-rows: 0px minmax(120px, 1.1fr) 120px;
+  }
+
+  .xl\:grid-rows-\[0px_minmax\(120px\2c _1\.1fr\)_0px\]{
+    grid-template-rows: 0px minmax(120px, 1.1fr) 0px;
+  }
+
+  .xl\:grid-rows-\[0px_minmax\(0px\2c _1\.1fr\)_0px\]{
+    grid-template-rows: 0px minmax(0px, 1.1fr) 0px;
+  }
+
+  .xl\:grid-rows-\[100px_minmax\(0px\2c _1\.1fr\)_0px\]{
+    grid-template-rows: 100px minmax(0px, 1.1fr) 0px;
+  }
+
+  .xl\:gap-4{
+    gap: 1rem;
   }
 
   .xl\:text-\[40px\]{

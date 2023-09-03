@@ -6,7 +6,7 @@ import { BOARD_URL } from '../../../Api/Urls';
 import BoardAdd from '../../../Components/Board/BoardAdd';
 import BoardBox from '../../../Components/Board/BoardBox';
 import BoardInputBox from '../../../Components/Board/BoardInputBox';
-import Layout from '../../../Components/Layout';
+import DashLayout from '../../../Components/DashLayout';
 import { fetch_to_add_board } from '../../../Redux/actions/board';
 
 const Boards = () => {
@@ -25,9 +25,15 @@ const Boards = () => {
         });
     }, [s_board, dispatch, token.token]);
 
+    if (!token.token) {
+        setTimeout(() => {
+            router.push('/auth/login');
+        }, 1500);
+    }
+
     if (token.token) {
         return (
-            <Layout title={'Boards'}>
+            <DashLayout title={'Boards'}>
                 <div className=" text-center">
                     {s_board?.map((board) => {
                         return (
@@ -53,14 +59,8 @@ const Boards = () => {
 
                     {isBoardAdd && <BoardInputBox closeButton={() => setIsBoardAdd(!isBoardAdd)} />}
                 </div>
-            </Layout>
+            </DashLayout>
         );
-    }
-
-    if (!token.token) {
-        setTimeout(() => {
-            router.push('/auth/login');
-        }, 1000);
     }
 };
 
