@@ -1,14 +1,32 @@
-import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
+import { getRequestSend } from '../../Api/RequestMethod';
+import { Task_URL } from '../../Api/Urls';
 import AddInputTaskBox from '../Task/AddInputTaskBox';
 import AddTaskBox from '../Task/AddTaskBox';
 import TaskBox from '../Task/TaskBox';
 import ListNameBox from './ListNameBox';
+import { useSelector } from 'react-redux';
 
-const ListBox = () => {
+const ListBox = ({ListId}) => {
     const [listData, setListData] = useState({
         name: '',
         color: '',
         boardId: ''
+    });
+
+    const token = useSelector((state) => state.auth);
+    const router = useRouter();
+
+    const [task, setTask] = useState([]);
+
+    useEffect(() => {
+        getRequestSend(Task_URL(ListId), { authorization: token.token }).then(
+            (response) => {
+                console.log(response);
+                setTask(response.data.data);
+            }
+        );
     });
 
     return (

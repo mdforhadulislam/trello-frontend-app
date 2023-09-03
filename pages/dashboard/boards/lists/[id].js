@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRequestSend } from '../../../../Api/RequestMethod';
-import { LIST_URL, Task_URL } from '../../../../Api/Urls';
+import { LIST_URL } from '../../../../Api/Urls';
 import Layout from '../../../../Components/Layout';
 import AddListBox from '../../../../Components/List/AddListBox';
 import AddListInputBox from '../../../../Components/List/AddListInputBox';
@@ -27,12 +27,6 @@ const List = () => {
                 }
             }
         );
-        lists?.map((list) => {
-            console.log(list);
-            getRequestSend(Task_URL(list._id), { authorization: token.token }).then((response) => {
-                console.log(response);
-            });
-        });
     }, [dispatch, lists, router.query.id, token.token]);
 
     return (
@@ -40,11 +34,13 @@ const List = () => {
             <div className="w-full h-auto overflow-x-scroll">
                 <div className="w-full h-full lg:h-[80vh] flex md:flex-row flex-col md:items-start items-center  align-top ">
                     {list?.map((s_list) => {
-                        return <ListBox key={s_list?._id} />;
+                        return <ListBox key={s_list?._id} ListId={s_list?._id} />;
                     })}
 
-                    {!isAddList && <AddListBox onClickHendler={() => setIsAddList(true)} />}
-                    {isAddList && <AddListInputBox />}
+                    {!isAddList && <AddListBox onClickHendler={() => setIsAddList(!isAddList)} />}
+                    {isAddList && (
+                        <AddListInputBox onSubmitHendler={() => {}} cencleHendler={() => {}} />
+                    )}
                 </div>
             </div>
         </Layout>

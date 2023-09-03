@@ -39,6 +39,10 @@ const BoardInputBox = ({ closeButton }) => {
         dispatch(run_spinner());
         postRequestSend(BOARD_URL, { authorization: token.token }, boardData).then((response) => {
             if (response.status === 200) {
+                setBoardData({
+                    name: '',
+                    color: ''
+                });
                 toast.success('Successfully Add Board');
                 dispatch(stop_spinner());
             } else {
