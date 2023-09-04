@@ -8,6 +8,7 @@ import BoardBox from '../../../Components/Board/BoardBox';
 import BoardInputBox from '../../../Components/Board/BoardInputBox';
 import DashLayout from '../../../Components/DashLayout';
 import { fetch_to_add_board } from '../../../Redux/actions/board';
+import { run_spinner, stop_spinner } from '../../../Redux/actions/spinner';
 
 const Boards = () => {
     const token = useSelector((state) => state.auth);
@@ -19,8 +20,12 @@ const Boards = () => {
 
     useEffect(() => {
         getRequestSend(BOARD_URL, { authorization: token.token }).then((response) => {
+            
+        dispatch(run_spinner());
             if (response.status === 200) {
                 dispatch(fetch_to_add_board(response.data.data));
+                
+                dispatch(stop_spinner());
             }
         });
     }, [s_board, dispatch, token.token]);
@@ -28,7 +33,7 @@ const Boards = () => {
     if (!token.token) {
         setTimeout(() => {
             router.push('/auth/login');
-        }, 1500);
+        },500);
     }
 
     if (token.token) {

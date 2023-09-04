@@ -24,42 +24,25 @@ const Dashboard = () => {
     }
 
     useEffect(() => {
-        getRequestSend(TOKEN_TO_USER(token.token), { authorization: token.token }).then(
-            (response) => {
-                if (response.status === 200) {
-                    setUser(response.data.message);
-                }
-            }
-        );
-
         getRequestSend(BOARD_URL, { authorization: token.token }).then((response) => {
             if (response.status === 200) {
                 setBoard(response.data.data);
                 dispatch(fetch_to_add_board(board));
             }
         });
-    }, [board, dispatch, token.token]);
+    }, [board]);
 
     return (
         <DashLayout>
-            <div className="container pt-3 pb-6 m-auto">
-                <div className="p-3">
-                    <div className=" pb-3 w-full">
-                        <h1 className=" text-4xl text-center title break-words">
-                            React Trellor App
-                        </h1>
-                    </div>
-                    <div className="w-full h-auto grid grid-cols-6 grid-rows-[195px_minmax(210px,_.9fr)_250px] xl:grid-rows-[100px_minmax(0px,_1.1fr)_0px] gap-5 xl:gap-4">
-                        <div className="xl:col-span-2 col-start-2 col-span-4 xl:row-start-2 flex">
-                            <BoardAddInputBox />
-                        </div>
-                        <div className="xl:col-span-2 col-start-2 col-span-4 xl:row-start-2 flex">
-                            <ListAddInputBox />
-                        </div>
-                        <div className="xl:col-span-2 col-start-2 col-span-4 xl:row-start-2 flex">
-                            <TaskAddInputBox />
-                        </div>
-                    </div>
+            <div className="w-full h-auto grid grid-cols-6 grid-rows-[195px_minmax(210px,_.9fr)_250px] xl:grid-rows-[100px_minmax(0px,_1.1fr)_0px] gap-5 xl:gap-4">
+                <div className="xl:col-span-2 col-start-2 col-span-4 xl:row-start-2 flex">
+                    <BoardAddInputBox />
+                </div>
+                <div className="xl:col-span-2 col-start-2 col-span-4 xl:row-start-2 flex">
+                    <ListAddInputBox />
+                </div>
+                <div className="xl:col-span-2 col-start-2 col-span-4 xl:row-start-2 flex">
+                    <TaskAddInputBox />
                 </div>
             </div>
         </DashLayout>

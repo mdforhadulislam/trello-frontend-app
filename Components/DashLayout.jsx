@@ -1,10 +1,11 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import Spinner from './utils/Spinner';
 
-const DashLayout = ({ children }) => {
+const DashLayout = ({ children, title }) => {
     const spinner = useSelector((state) => state.spinner);
     return (
         <>
@@ -25,7 +26,14 @@ const DashLayout = ({ children }) => {
             </Head>
             <ToastContainer />
             {spinner && <Spinner />}
-            <div className="container m-auto py-4">{children}</div>
+            <div className=" p-3 text-slate-50 w-full bg-[#3056d3] shadow">
+                <h1 className=" text-4xl text-center text-slate-50 title break-words cursor-pointer">
+                    <Link href={'/'}>{title ? title : 'React Trellor App'}</Link>
+                </h1>
+            </div>
+            <div className="container m-auto">
+                <div className="container pt-4 pb-6 m-auto">{children}</div>
+            </div>
         </>
     );
 };

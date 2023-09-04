@@ -14,7 +14,7 @@ const TaskAddInputBox = () => {
 
     const [taskData, setTaskData] = useState({
         task: '',
-        listId: selectListId
+        listId: ''
     });
 
     const boardList = useSelector((state) => state.board);
@@ -26,18 +26,22 @@ const TaskAddInputBox = () => {
     const submitHendler = (e) => {
         e.preventDefault();
         dispatch(run_spinner());
-        postRequestSend(Task_URL(selectListId), { authorization: token.token }, taskData).then(
-            (response) => {
-                if (response.status === 200) {
-                    toast.success('Successfully Add Task');
-                    dispatch(stop_spinner());
-                    setTaskData({ task: '' });
-                } else {
-                    toast.error('Failed to add List');
-                    dispatch(stop_spinner());
-                }
+        postRequestSend(
+            Task_URL(selectListId),
+            { authorization: token.token },
+            { task: taskData.task, listId: selectListId }
+        ).then((response) => {
+            if (response.status === 200) {
+                toast.success('Successfully Add Task');
+                dispatch(stop_spinner());
+                setSelectBoardId('');
+                setSelectListId('');
+                setTaskData({ task: '', listId: '' });
+            } else {
+                toast.error('Failed to add List');
+                dispatch(stop_spinner());
             }
-        );
+        });
     };
 
     useEffect(() => {

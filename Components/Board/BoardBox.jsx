@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState } from 'react';
 import BoardEditInputBox from './BoardEditInputBox';
 import BoardOption from './BoardOption';
@@ -21,11 +22,11 @@ const BoardBox = ({ boardId, boardName, underListNumber, boardLink, bgColor }) =
             )}
 
             <div className={`${bgColor}  h-[5.5rem] p-2 rounded flex`}>
-                <a className="w-full text-left" href={boardLink}>
+                <Link className="w-full text-left" href={boardLink}>
                     <div className="w-full ">
                         <h1 className=" font-semibold text-xl">{boardName}</h1>
                     </div>
-                </a>
+                </Link>
                 <img
                     className="cursor-pointer z-50 w-[2rem] h-[2rem] absolute right-3 top-3"
                     onClick={() => setIsOption(!isOption)}
